@@ -1,3 +1,17 @@
+# Flashcards
+
+This is an off-project via [Codecademy](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path) which I  created a flashcard-style quiz app. Users will be able to create their own topics, quizzes for those topics, and flashcards for those quizzes. Users will also be able to interact with their quizzes by flipping flashcards over.
+
+### Technologies used 
++ HTLM
++ Javascript
++ React
++ Redux
++ npm
++ CSS
+
+Although my code is on this page there are still  improvments needed to be made so I will make update in the near future.
+
 # To Run
 
 Run `npm start` in the project root and the app will be available on port 3000.
