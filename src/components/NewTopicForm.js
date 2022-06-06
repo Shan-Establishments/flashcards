@@ -7,10 +7,10 @@ import { addTopic } from "../features/topics/topicsSlice";
 import { useDispatch } from "react-redux";
 
 export default function NewTopicForm() {
-  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("");
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,8 +21,8 @@ export default function NewTopicForm() {
     // dispatched my add topic action here
     dispatch(
       addTopic({
-        name: name,
         id: uuidv4(),
+        name: name,
         icon: icon,
       })
     );
@@ -31,31 +31,29 @@ export default function NewTopicForm() {
 
   return (
     <section>
+      <h1 className="center">Create a new topic</h1>
       <form onSubmit={handleSubmit}>
-        <h1 className="center">Create a new topic</h1>
-        <div className="form-section">
-          <input
-            id="topic-name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.currentTarget.value)}
-            placeholder="Topic Name"
-          />
-          <select
-            onChange={(e) => setIcon(e.currentTarget.value)}
-            required
-            defaultValue="default"
-          >
-            <option value="default" disabled hidden>
-              Choose an icon
+        <input
+          id="topic-name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.currentTarget.value)}
+          placeholder="Topic Name"
+        />
+        <select
+          onChange={(e) => setIcon(e.currentTarget.value)}
+          required
+          defaultValue="default"
+        >
+          <option value="default" disabled hidden>
+            Choose an icon
+          </option>
+          {ALL_ICONS.map(({ name, url }) => (
+            <option key={url} value={url}>
+              {name}
             </option>
-            {ALL_ICONS.map(({ name, url }) => (
-              <option key={url} value={url}>
-                {name}
-              </option>
-            ))}
-          </select>
-        </div>
+          ))}
+        </select>
         <button className="center">Add Topic</button>
       </form>
     </section>

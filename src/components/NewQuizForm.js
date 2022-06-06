@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import ROUTES from "../app/routes";
-import { useDispatch, useSelector } from 'react-redux';
-import { topicsSelector } from '../features/topics/topicsSlice';
-import { quizThunk } from '../features/quizzes/quizzesSlice';
-import { addCard } from '../features/cards/cardsSlice';
+import { useDispatch, useSelector } from "react-redux";
+import { topicsSelector } from "../features/topics/topicsSlice";
+import { quizThunk } from "../features/quizzes/quizzesSlice";
+import { addCard } from "../features/cards/cardsSlice";
 
 export default function NewQuizForm() {
   const [name, setName] = useState("");
@@ -24,23 +24,25 @@ export default function NewQuizForm() {
     const cardIds = [];
 
     // created the new cards here and add each card's id to cardIds
-    cards.forEach((card) => {
-			let cardId = uuidv4();
-			cardIds.push(cardId);
-			dispatch(addCard({ ...card, id: cardId }));
-		});
+    cards.map((card) => {
+      let cardId = uuidv4();
+      cardIds.push(cardId);
+      return dispatch(
+        addCard({ id: cardId, front: card.front, back: card.back })
+      );
+    });
 
     // created the new quiz here
     let quizId = uuidv4();
 
     dispatch(
-      quizThunk({ 
-      name: name, 
-      topicId: topicId, 
-      cardIds: cardIds,
-      id: quizId,
-    })
-  );
+      quizThunk({
+        id: quizId,
+        name: name,
+        topicId: topicId,
+        cardIds: cardIds,
+      })
+    );
     history.push(ROUTES.quizzesRoute());
   };
 
@@ -51,7 +53,7 @@ export default function NewQuizForm() {
 
   const removeCard = (e, index) => {
     e.preventDefault();
-    setCards(cards.filter((card, i) => index !== card[i]));
+    setCards(cards.filter((card, i) => index !== i));
   };
 
   const updateCardState = (index, side, value) => {

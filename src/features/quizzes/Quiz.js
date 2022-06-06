@@ -1,12 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import Card from "../cards/Card";
 import ROUTES from "../../app/routes";
-import { v4 as uuidv4 } from 'uuid';
-import { quizzesSelector } from './quizzesSlice';
-import { useSelector } from 'react-redux';
- 
-let uniqueId = uuidv4(); 
- 
+import { v4 as uuidv4 } from "uuid";
+import { quizzesSelector } from "./quizzesSlice";
+import { useSelector } from "react-redux";
+
+let uniqueId = uuidv4();
+
 console.log(uniqueId);
 
 export default function Topic() {
