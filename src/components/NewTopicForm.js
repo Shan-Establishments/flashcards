@@ -3,14 +3,14 @@ import { useHistory } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import ROUTES from "../app/routes";
 import { ALL_ICONS } from "../data/icons";
-import { addTopic } from '../features/topics/topicsSlice';
-import { useDispatch } from 'react-redux';
+import { addTopic } from "../features/topics/topicsSlice";
+import { useDispatch } from "react-redux";
 
 export default function NewTopicForm() {
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("");
   const history = useHistory();
-  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
