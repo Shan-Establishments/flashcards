@@ -1,6 +1,8 @@
-# Flashcards
+# Flashcards Project 
 
-This is an off-project via [Codecademy](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path) which I  created a flashcard-style quiz app. Users will be able to create their own topics, quizzes for those topics, and flashcards for those quizzes. Users will also be able to interact with their quizzes by flipping flashcards over.
+This is an off-project via [Codecademy](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path) which I  created a flashcard-style quiz app. Users will be able to create their own topics, quizzes for those topics, and flashcards for those quizzes. Users will also be able to interact with their quizzes by flipping flashcards over. To gain a better understanding you can view the project [here](https://snazzy-sfogliatella-df13e0.netlify.app/topics).
+
+**Please note the project is still a working process, updates will be made momentarily.**
 
 ### Technologies used 
 + HTLM
@@ -38,3 +40,5 @@ The app's state is totally normalized, with slices for topics, quizzes, and card
 # Questions
 
 Is this appropriately scoped? Does it have too many features? Too few?
+
+Thia project was created by [Shantoya Burrell](https://github.com/Shan-Establishments/) and was updated 07/06/2022
