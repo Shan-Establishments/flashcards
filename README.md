@@ -5,7 +5,7 @@ This is an off-project via [Codecademy](https://www.codecademy.com/learn/paths/f
 **Please note the project is still a working process, updates will be made momentarily.**
 
 ### Technologies used 
-+ HTLM
++ HTML
 + Javascript
 + React
 + Redux
